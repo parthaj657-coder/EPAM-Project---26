@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>XYZ Bank</title>
+        <script type="text/javascript">
+                function trigger()
+                {
+                    document.getElementById("hover").addEventListener("mouseover",popup)
+                }
+                function popup()
+                {
+                    alert("Welcome to the XYZ Bank")
+                }
+
+
+            </script>
+            <script>
+                function validateCustomer()
+                {
+                    var CustID=document.getElementById("custID").value
+                    var validateCust=CustID.includes("XYZ")
+                    if(validateCust)
+                {
+                document.write("Customer ID is valid, you can proceed further to generate coupon")
+                }
+                else if(CustID=="")
+                {
+                document.write("Enter customer ID")
+                }
+                else
+                {
+                document.write("You are not a valid customer")
+                }
+                }
+            </script>
+            <script>
+                function generateCoupon()
+                {
+                    var custID=document.getElementById("custID").value
+                    var x =custID + "789456"
+                    var validateCust=custID.includes("XYZ")
+                    if (validateCust)
+                {
+                document.write("Your coupon is:"+x)
+                }
+                else
+                {
+                document.write("Invalid Customer ID so can't generate the coupon")
+                }
+                }
+            </script>
+    </head>
+        <body onload="trigger()">
+            <p id="hover">Welcome user!!!</p>
+            <p id="demo">Follow the given steps to get Diwali coupon:<BR>
+                1) Enter your customer ID in the textbox<br>
+                2) click on validate customer button<br>
+                3) Click on Register button to hide all the above steps and can apply for coupons<br>
+            </p>
+
+            <button type="button" onclick="document.getElementById('demo').style.display='none'">Click here to Register</button><br><br>
+            Enter Customer ID:
+            <input id="custID" type="text" name="customerID"><br><br>
+            
+            <button type="button" onclick="validateCustomer()">Validate customer</button>
+            
+            <button type="button" onclick="generateCoupon()">Click here to generate coupon<br><br>
+        </body>
+</html>
